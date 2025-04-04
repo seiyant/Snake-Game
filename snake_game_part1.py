@@ -1,5 +1,6 @@
-# Group#:
-# Student Names:
+# Group#:        A34
+# Student Names: Alvina Gakhokidze 
+#                Seiya Nozawa-Temchenko
 
 """
     This program implements a variety of the snake 
@@ -128,6 +129,8 @@ class Game():
         while self.gameNotOver:
             #complete the method implementation below
             pass #remove this line from your implementation
+            '''TO DO:
+            move then delay by speed'''
 
     def whenAnArrowKeyIsPressed(self, e) -> None:
         """ 
@@ -162,6 +165,13 @@ class Game():
         NewSnakeCoordinates = self.calculateNewCoordinates()
         #complete the method implementation below
 
+        '''TO DO:
+        append the new coordinate and update x/y in a snake shape fashion (box rather than line) +/-px type of thing
+        if the +/-px is engulfed by the head, add score, and create new dot
+        else there is no capture (maintain length)
+        update new coordinates into queue (check if new position means game over maybe?)
+        '''
+
 
     def calculateNewCoordinates(self) -> tuple:
         """
@@ -174,6 +184,11 @@ class Game():
         """
         lastX, lastY = self.snakeCoordinates[-1]
         #complete the method implementation below
+        '''TO DO:
+        if left, subtract 10 from x
+        if down, add 10 to y, etc, etc
+        return the x and y
+        '''
 
 
     def isGameOver(self, snakeCoordinates) -> None:
@@ -186,6 +201,10 @@ class Game():
         """
         x, y = snakeCoordinates
         #complete the method implementation below
+        '''TO DO:
+        check if we're within the bounds in x and y directions (collision into bounds)
+        check if we collide with ourselves (unsure about new head itself case)
+        '''
 
     def createNewPrey(self) -> None:
         """ 
@@ -200,6 +219,10 @@ class Game():
         """
         THRESHOLD = 15   #sets how close prey can be to borders
         #complete the method implementation below
+        '''TO DO:
+        randomly choose x and y within bounds and threshold
+        create boxed prey size and add task to queue for GUI display
+        '''
 
 
 if __name__ == "__main__":
@@ -248,3 +271,6 @@ Note that this portion of the project will have a weight of roughly up to 13%
 (depending on the effort and the approach; so consider this part1_alternative portion, 
 if your group is aiming for a high grade).
 '''
+#IDEAS:
+#add play again option?
+#increase speed with each dot, but can choose to reduce speed by giving up dots too?
